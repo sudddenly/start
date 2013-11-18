@@ -16,3 +16,7 @@ twinkle twinkle little star, how i wander what you are
 暂时先这样吧
 
 13.11.17
+
+
+竟然就这么睡过去了，万万不应该啊，还有好多事情没有做，R的东西没有看，avayaVPN的问题还没处理，该聊的东西也完全错过去了，哎，怎么会这样子。
+13.11.19 02：02
