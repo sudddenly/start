@@ -32,3 +32,6 @@ twinkle twinkle little star, how i wander what you are
 所以，抓包分析需要在交换机上座流量镜像，然后抓镜像流量做分析。
 
 另外，voip是走rtp协议，rtp会封装到udp协议里传输，并且不会重传，所以一旦丢包就完全没法用了
+
+最近比特币很火，或者是不是都火过了，要不要挖个矿试试啊。
+13.11.22
