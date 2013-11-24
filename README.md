@@ -39,3 +39,38 @@ twinkle twinkle little star, how i wander what you are
 centos的桥接，网上的教程各种坑爹，一重启网卡起不来了，悲催啊
 网卡设置，直接发结果吧
 
+[root@localhost network-scripts]# cat ifcfg-eth0
+# Intel Corporation 82545EM Gigabit Ethernet Controller (Copper)
+DEVICE=eth0
+#BOOTPROTO=status
+ONBOOT=yes
+HWADDR=00:0c:29:6a:27:2e
+#TYPE=Ethernet
+#IPADDR=192.168.50.181
+#NETMASK=255.255.255.0
+#GATEWAY=192.168.50.1
+BRIDGE=br0
+[root@localhost network-scripts]# cat ifcfg-br0
+# Intel Corporation 82545EM Gigabit Ethernet Controller (Copper)
+DEVICE=br0
+BOOTPROTO=static
+ONBOOT=yes
+TYPE=Bridge
+IPADDR=192.168.50.181
+NETMASK=255.255.255.0
+GATEWAY=192.168.50.1
+
+再补充下KVM安装的几个出错点
+安装 xorg-x11-xauth
+这两项改成yes
+vim /etc/ssh/sshd_config
+AllowTcpForwarding yes
+X11Forwarding yes
+
+Xming启动被拒绝时 快捷方式后面加一个 -ac
+
+virt-install --name coffee --ram=2048 --vcpus=2 --os-type=linux--accelerate \
+--hvm --disk path=/home/tangchengji/coffee.img,size=6,bus=virtio \
+--cdrom=/root/ubuntu-12.04.2-desktop-amd64.iso --network bridge=br0,model=virtio
+
+另外，服务器bios要开启虚拟化支持，要不没法创建全虚拟化的虚拟机
