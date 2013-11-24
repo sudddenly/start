@@ -35,3 +35,26 @@ twinkle twinkle little star, how i wander what you are
 
 最近比特币很火，或者是不是都火过了，要不要挖个矿试试啊。
 13.11.22
+
+centos的桥接，网上的教程各种坑爹，一重启网卡起不来了，悲催啊
+网卡设置，直接发结果吧
+[root@localhost network-scripts]# cat ifcfg-eth0
+# Intel Corporation 82545EM Gigabit Ethernet Controller (Copper)
+DEVICE=eth0
+#BOOTPROTO=status
+ONBOOT=yes
+HWADDR=00:0c:29:6a:27:2e
+#TYPE=Ethernet
+#IPADDR=192.168.50.181
+#NETMASK=255.255.255.0
+#GATEWAY=192.168.50.1
+BRIDGE=br0
+[root@localhost network-scripts]# cat ifcfg-br0
+# Intel Corporation 82545EM Gigabit Ethernet Controller (Copper)
+DEVICE=br0
+BOOTPROTO=static
+ONBOOT=yes
+TYPE=Bridge
+IPADDR=192.168.50.181
+NETMASK=255.255.255.0
+GATEWAY=192.168.50.1
