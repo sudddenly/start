@@ -74,3 +74,6 @@ virt-install --name coffee --ram=2048 --vcpus=2 --os-type=linux--accelerate \
 --cdrom=/root/ubuntu-12.04.2-desktop-amd64.iso --network bridge=br0,model=virtio
 
 另外，服务器bios要开启虚拟化支持，要不没法创建全虚拟化的虚拟机
+
+格式还是不知道怎么回事，又荒废3天了，这几天都直接睡过去了，哎，罪过啊，坚持还真是一件难事。
+另外，虚拟的远程桌面好坑爹啊，莫名其妙就死掉了，都不知道怎么重新查看，明天换个原生的VNC看看。
